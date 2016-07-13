@@ -137,20 +137,30 @@ Testing in R
 
 The tidy-verse solution is `testthat` (although there are others). The easiest way is to work within a package-framework.
 
+* need the file: ``tests/testthat.R``
 * tests go in ``tests/testthat/test*.R`` 
-* need the file: ``tests/testthat.R``: 
-
-		.. code:: R
-
-		  library(testthat)
-		  library([package name])
-		  test_check("[package name]")
+* use ``context("[some context]")`` for sign posting
+* put tests in ``test_that("[something]", {[tests]})``
+* test with ``expect_*([evaluation], [optionals])``
 
 
 ----
 
-R example
-=========
+``tests/testthat.R``
+====================
+
+.. code:: R
+
+  library(testthat)
+  library([package name])
+  
+  test_check("[package name]")
+
+
+----
+
+``tests/testthat/testEx0.R``
+============================
 
 .. code:: R
 
@@ -175,13 +185,12 @@ R example
 
 ----
 
-R example (cont.)
-=================
+``tests/testthat/testEx1.R``
+============================
 
 .. code:: R
 
   context("writeCSVsFromData")
-
   test_that("writeCSVsFromData will overwrite", {
     expect_message(writeCSVsFromData(pureReplication))
   })
