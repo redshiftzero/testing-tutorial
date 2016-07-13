@@ -60,6 +60,8 @@ When to run your test suite
 Travis
 ======
 
+.. image:: images/travis.png
+
 
 
 ----
