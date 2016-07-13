@@ -77,7 +77,7 @@ Nightwatch is a node.js-based browser testing solution
 ----
 
 Nightwatch example
-===============
+==================
 
 .. code:: js
 
@@ -91,16 +91,80 @@ Nightwatch example
     .click('button#languageBGSubmit')
     .waitForElementVisible('button#continue', 10000)
     .assert.containsText('body', 'Now we\'re ready to start the
-	 experiment, first let\'s try a few practice items.')
+      experiment, first let\'s try a few practice items.')
 
 ----
 
 Testing in R
 ============
 
-* blah
+The tidy-verse solution is `testthat` (although there are others). The easiest way is to work within a package-framework.
+
+* tests go in ``tests/testthat/test*.R`` 
+* need the file: ``tests/testthat.R``: 
+
+		.. code:: R
+
+		  library(testthat)
+		  library([package name])
+		  test_check("[package name]")
+
 
 ----
+
+R example
+=========
+
+.. code:: R
+
+  context("distance calculationss")
+  load(file.path('extractedMarkerData.RData')) # markerDataHead
+  load(file.path('dist57.RData')) # dist57head
+  load(file.path('meanData.RData')) # meanDataHead
+
+  test_that("calculateDistances returns the correct distances", {
+    expect_equal(calculateDistances(markerDataHead, c(5,7)),
+                 dist57head)
+  })
+
+  test_that("meanOnAxis returns the correct distances", {
+    expect_equal(meanOnAxis(markerDataHead,
+                            c(0, 1, 2, 3, 4),
+                            axis ="Y"),
+                 meanDataHead)
+  })
+  
+
+
+----
+
+R example (cont.)
+=================
+
+.. code:: R
+
+  context("writeCSVsFromData")
+
+  test_that("writeCSVsFromData will overwrite", {
+    expect_message(writeCSVsFromData(pureReplication))
+  })
+  test_that("writeCSVsFromData checks for existing files", {
+    expect_error(writeCSVsFromData(pureReplication,
+                                   overwrite=FALSE))
+  })
+  
+  context("checkData runs silently")
+  test_that("checkData silently returns the data object 
+             it was presented",{
+    expect_silent(checkData(pureReplication, 
+                  modelMd = modelMetadata))
+    expect_equal(checkData(pureReplication, 
+                 modelMd = modelMetadata),
+                 pureReplication)
+  })
+
+----
+
 
 References
 ==========
