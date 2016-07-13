@@ -132,6 +132,20 @@ Nightwatch example
 
 ----
 
+Running Nightwarch
+==================
+
+With some configuration (and installing drivers) you can run:
+
+``./node_modules/nightwatch/bin/nightwatch -e chrome``
+
+``./node_modules/nightwatch/bin/nightwatch -e firefox``
+
+``./node_modules/nightwatch/bin/nightwatch -e safari``
+
+
+----
+
 Testing in R
 ============
 
