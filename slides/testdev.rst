@@ -215,13 +215,36 @@ When to run your test suite
 
 ----
 
-Travis
-======
+Travis runs your tests for you
+==============================
+
+... and nags you when they fail.
 
 .. image:: images/travis.png
 
+----
 
+Coverage?
+=====================================
 
+Code coverage is the amount of code that is tested by a test. There are a bunch of ways to do this: ``codeCov`` and ``coverall`` are two.
+
+This is an inexact science, and can be abused, but is a good sanity check.
+
+----
+
+The best part? Badges!
+=====================================
+
+travis:
+
+.. image:: images/travisBuildPassing.svg
+    :width: 250px
+
+codeCov:
+
+.. image:: images/codeCov.svg
+    :width: 250px
 
 ----
 
