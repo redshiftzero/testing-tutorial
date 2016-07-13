@@ -18,6 +18,8 @@ Why test
 
 * You want to find sneaky bugs
 
+.. image:: images/bugs_meme.jpg
+
 * You want to be sure you don't break existing functionality as you add new features (regression) 
 
 ----
@@ -39,9 +41,9 @@ Unit tests vs integration tests
 Writing unit tests helps you write good code
 ============================================
 
-* You should be thinking about what a function should take as arguments and what it should return _before_ you write it
+* You should be thinking about what a function should take as arguments and what it should return *before* you write it
 
-* "How would I test this code?" accomplishes this
+* "How would I test this code?" makes you think about your code structure
 
 * Good functions also have minimal external dependencies
 
@@ -65,7 +67,7 @@ Testing in Python
 Making this a Real Unit Test
 ============================
 
-* `unittest` is a framework in Python for writing tests
+* ``unittest`` is a framework in Python for writing tests
 
 
 
@@ -74,9 +76,9 @@ Making this a Real Unit Test
 Other Testing Frameworks
 ========================
 
-* `nose`
+* ``nose``
 
-* `py.test`
+* ``py.test``
 
 ----
 
@@ -224,12 +226,61 @@ Travis runs your tests for you
 
 ----
 
+Travis
+======
+
+* Sign up on ``travis-ci.org`` and turn on that repo
+
+* Add a ``.travis.yml`` configuration file to your repo to tell Travis what to do
+
+* Commit and push and Travis will run your tests
+
+* Every time someone commits or submits a PR, Travis will run your tests! 
+
+* See ``https://docs.travis-ci.com/user/getting-started/`` for links to config files
+
+----
+
+.. image:: images/travis_example.png
+    :width: 900px
+
+----
+
 Coverage?
 =====================================
 
-Code coverage is the amount of code that is tested by a test. There are a bunch of ways to do this: ``codeCov`` and ``coverall`` are two.
+* You are only checking the code that you have written tests for
 
-This is an inexact science, and can be abused, but is a good sanity check.
+* Code coverage is the amount of code that is tested by your test suite
+
+* There are a bunch of ways to do this: ``codeCov`` and ``coverall`` are two
+
+* This is an inexact science, and can be abused, but is a good sanity check
+
+----
+
+.. image:: images/coverage.png
+    :width: 900px
+
+----
+
+.. image:: images/linebyline.png
+    :width: 900px
+
+----
+
+Services like this make reviewing PRs much easier
+=================================================
+
+----
+
+.. image:: images/coveralls_running_tests.png
+    :width: 900px
+
+----
+
+.. image:: images/checks_pass.png
+    :width: 600px
 
 ----
 
