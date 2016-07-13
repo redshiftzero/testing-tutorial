@@ -212,6 +212,20 @@ The tidy-verse solution is `testthat` (although there are others). The easiest w
 ----
 
 
+mocapGrip package
+=================
+
+Check out testing in action (and all of my bad coding) in R:
+https://github.com/jonkeane/mocapGrip
+
+travis:
+https://travis-ci.org/jonkeane/mocapGrip
+
+coverage:
+https://codecov.io/gh/jonkeane/mocapGrip
+
+----
+
 References
 ==========
 
