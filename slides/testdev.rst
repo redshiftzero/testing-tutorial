@@ -11,12 +11,28 @@ Testing
 
 ----
 
-Why Test
+Why test
 ========
 
-* You want your code to work
+* You want to verify that your code is correct 
 
+* You want to find sneaky bugs
 
+* You want to be sure you don't break existing functionality as you add new features (regression) 
+
+----
+
+Tests are a safety net
+======================
+
+----
+
+Writing tests helps you write good code
+=======================================
+
+* Designing good tests 
+
+* Test-Driven Development (TDD) is a style where you first write failing tests, then write the code to get the tests to pass.  
 
 ----
 
@@ -28,10 +44,21 @@ Testing in Python
 
 
 
+----
 
+When to run your test suite
+===========================
 
+* You should run your tests often
 
+* You should run your tests when a PR is submitted
 
+* Enter Travis!
+
+----
+
+Travis
+======
 
 
 
