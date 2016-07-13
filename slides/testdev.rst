@@ -27,10 +27,23 @@ Tests are a safety net
 
 ----
 
-Writing tests helps you write good code
-=======================================
+Unit tests vs integration tests
+===============================
 
-* Designing good tests 
+* Unit tests check a minimal piece of functionality (fast, scale well)
+
+* Integration tests check end-to-end functionality (slower, don't scale well)
+
+----
+
+Writing unit tests helps you write good code
+============================================
+
+* You should be thinking about what a function should take as arguments and what it should return _before_ you write it
+
+* "How would I test this code?" accomplishes this
+
+* Good functions also have minimal external dependencies
 
 * Test-Driven Development (TDD) is a style where you first write failing tests, then write the code to get the tests to pass.  
 
@@ -39,10 +52,31 @@ Writing tests helps you write good code
 Testing in Python
 =================
 
-* blah
+
+----
+
+.. code-block:: python
+
+    def my_function(meh):
+
+
+----
+
+Making this a Real Unit Test
+============================
+
+* `unittest` is a framework in Python for writing tests
 
 
 
+----
+
+Other Testing Frameworks
+========================
+
+* `nose`
+
+* `py.test`
 
 ----
 
@@ -61,6 +95,7 @@ Travis
 ======
 
 .. image:: images/travis.png
+
 
 
 
