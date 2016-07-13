@@ -41,6 +41,7 @@ Selenium + Nightwatch
 =====================
 
 Selenium automates web browsing
+
 * (all the  complicated scraping you could want)
 * but can be used for testing web-based interfaces
 
@@ -48,7 +49,7 @@ Nightwatch is a node.js-based browser testing solution
 
 ----
 
-Nightwatch code
+Nightwatch example
 ===============
 
 .. code:: js
@@ -57,12 +58,13 @@ Nightwatch code
     browser
     .waitForElementVisible('input#email', 1000)
     .setValue('input#email', 'nightwatch@jonkeane.com')
-    ...
-      .pause(500) // for safari
-      .waitForElementVisible('button#languageBGSubmit', 1000)
-      .click('button#languageBGSubmit')
-      .waitForElementVisible('button#continue', 10000)
-      .assert.containsText('body', 'Now we\'re ready to start the experiment, first let\'s try a few practice items.')
+    [assert all the things]
+    .pause(500) // for safari
+    .waitForElementVisible('button#languageBGSubmit', 1000)
+    .click('button#languageBGSubmit')
+    .waitForElementVisible('button#continue', 10000)
+    .assert.containsText('body', 'Now we\'re ready to start the
+	 experiment, first let\'s try a few practice items.')
 
 ----
 
