@@ -80,27 +80,6 @@ Other Testing Frameworks
 
 ----
 
-When to run your test suite
-===========================
-
-* You should run your tests often
-
-* You should run your tests when a PR is submitted
-
-* Enter Travis!
-
-----
-
-Travis
-======
-
-.. image:: images/travis.png
-
-
-
-
-----
-
 Selenium + Nightwatch
 =====================
 
@@ -225,6 +204,26 @@ The tidy-verse solution is `testthat` (although there are others). The easiest w
 
 ----
 
+When to run your test suite
+===========================
+
+* You should run your tests often
+
+* You should run your tests when a PR is submitted
+
+* Enter Travis!
+
+----
+
+Travis
+======
+
+.. image:: images/travis.png
+
+
+
+
+----
 
 mocapGrip package
 =================
