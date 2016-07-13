@@ -231,4 +231,4 @@ References
 
 * Ned Batchelder, Getting Started Testing, PyCon 2014: https://www.youtube.com/watch?v=FxSsnHeWQBY
 * testthat (with R package development backdrop): http://r-pkgs.had.co.nz/tests.html
-* Nightwatch(with selenium): http://nightwatchjs.org/guide#running-tests
+* Nightwatch (with selenium): http://nightwatchjs.org/guide#running-tests
