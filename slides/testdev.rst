@@ -164,6 +164,8 @@ Making this a Real Unit Test
 
 * ``unittest`` is a module in Python for writing tests
 
+* Each test runs in *isolation*
+
 * Let's convert our test into a test that uses ``unittest``
 
 ----
@@ -183,8 +185,15 @@ First Real Unit Test
             expected_output = ("[datetime.datetime(2014, 1, 1, 0, 0), "
                                "datetime.datetime(2015, 1, 1, 0, 0), "
                                "datetime.datetime(2016, 1, 1, 0, 0)]")
-            assert str(actual_output) == expected_output
+            self.assertEqual(str(actual_output), expected_output)
 
+----
+
+Fancypants asserts
+==================
+
+Inheriting from ``unittest.TestCase`` gives us lots of handy assert methods: 
+``assertRaises``, ``assertTrue``, ``assertNotEqual``, ``assertIn``, ``assertSequenceEqual``, ...
 
 ----
 
@@ -208,6 +217,81 @@ Failing Tests
 
 .. image:: images/failed_unittest.png
     :width: 900px
+
+----
+
+What Tests to Write
+===================
+
+* Try different inputs that the code could receive in the course of operation
+
+* Test representative cases
+
+----
+
+Let's Test for Weird Input
+==========================
+
+Check that it raises the expected exception:
+
+.. code-block:: python
+
+    import unittest
+    from pipeline.temporalcv import make_fake_todays
+
+
+    class TemporalCVTest(unittest.TestCase):
+        def test_string_input_fake_todays(self):
+            with self.assertRaises(TypeError):
+                actual_output = make_fake_todays('string input')
+
+----
+
+.. image:: images/alltestspassing.png
+    :width: 900px
+
+----
+
+Handling Databases
+==================
+
+* Separate code that requires the database, e.g. SQL-based queries in feature generation code, from further processing done in Python such that you can more easily write a test
+
+* You might also consider setting up a test database with a *small* amount of data
+
+----
+
+SetUp and TearDown
+==================
+
+``setUp()`` runs before every test and ``tearDown()`` runs after every test
+
+.. code-block:: python
+
+    import unittest
+    import pipeline
+
+    class PipelineTest(unittest.TestCase):
+        def setUp(self):
+            # Set up some records in the test db
+
+        def test_a_thing_here(self):
+            self.assertEquals(foo, bar)
+
+        def test_another_thing_here(self):
+            self.assertNotEquals(foo, bar)
+
+        def tearDown(self):
+            # Remove records in the test db
+
+----
+
+Test *your* code
+================
+
+Not scikit-learn's code
+
+Consider using mock objects to reduce external dependencies and make tests faster: https://docs.python.org/3/library/unittest.mock.html#quick-guide
 
 ----
 

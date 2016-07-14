@@ -8,4 +8,9 @@ class TemporalCVTest(unittest.TestCase):
         expected_output = ("[datetime.datetime(2014, 1, 1, 0, 0), "
                            "datetime.datetime(2015, 1, 1, 0, 0), "
                            "datetime.datetime(2016, 1, 1, 0, 0)]")
-        assert str(actual_output) == expected_output
+        self.assertEqual(str(actual_output), expected_output)
+
+
+    def test_string_input_fake_todays(self):
+        with self.assertRaises(TypeError):
+            actual_output = make_fake_todays('string input')
