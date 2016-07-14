@@ -10,7 +10,6 @@ class TemporalCVTest(unittest.TestCase):
                            "datetime.datetime(2016, 1, 1, 0, 0)]")
         self.assertEqual(str(actual_output), expected_output)
 
-
     def test_string_input_fake_todays(self):
         with self.assertRaises(TypeError):
             actual_output = make_fake_todays('string input')
