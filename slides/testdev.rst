@@ -11,6 +11,21 @@ Testing
 
 ----
 
+Today
+=====
+
+* Why writing tests can save you time
+
+* Testing in Python with ``unittest``
+
+* Selenium and testing web applications
+
+* Testing in R
+
+* Travis CI and test coverage
+
+----
+
 Why test
 ========
 
